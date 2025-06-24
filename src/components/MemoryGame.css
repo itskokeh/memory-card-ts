@@ -1,0 +1,33 @@
+.imageboard {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 90vw;
+  gap: 20px;
+  margin: auto;
+  padding: 20px;
+}
+
+.imageboard > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.imageboard > img:hover {
+  transform: scale(1.05)
+}
+
+@media (max-width: 768px) {
+  .imageboard {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .imageboard {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    margin: 0;
+  }
+}

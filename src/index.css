@@ -1,0 +1,12 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+#root {
+  background: linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+}
