@@ -18,9 +18,7 @@ const MemoryGame = ({ onScoreUpdate }: MemoryGameProps) => {
       try {
         const response = await fetch ('/images.json');
         const data: ImageType[] = await response.json();
-        const duplicatedImages = [...data, ...data];
-        const shuffledImages = shuffleArray (duplicatedImages);
-        setImages (shuffledImages)
+        setImages (data);
       } catch (error) {
         console.error('Error fetching images:', error);
       }
@@ -29,7 +27,8 @@ const MemoryGame = ({ onScoreUpdate }: MemoryGameProps) => {
   }, [])
 
   const shuffleArray = (array: ImageType[]) => {
-    return array.sort(() => Math.random() - 0.5)
+    const newArray = [...array];
+    return newArray.sort(() => Math.random() - 0.5)
   }
 
   const handleImageClick = (imageId: string) => {
@@ -41,7 +40,7 @@ const MemoryGame = ({ onScoreUpdate }: MemoryGameProps) => {
       setClickedImages (newClickedImages)
       onScoreUpdate (newClickedImages.length, false)
     }
-    setImages((prevImages) => shuffleArray([...prevImages]))
+    setImages((prevImages) => shuffleArray(prevImages))
   }
   return (
     <div className="imageboard">
