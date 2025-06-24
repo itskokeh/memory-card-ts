@@ -49,7 +49,7 @@ const MemoryGame = ({ onScoreUpdate }: MemoryGameProps) => {
           key={`${image.id}-${index}`} 
           src={image.url}
           alt={`Card ${image.id}`}
-          onClick={() => handleImageClick(image.id)}
+          onKeyDown={() => handleImageClick(image.id)}
         />
       ))}
     </div>
