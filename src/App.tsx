@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Header from './components/Header';
 import MemoryGame from './components/MemoryGame';
-import './App.css';
 
 const App = () => {
   const [currentScore, setCurrentScore] = useState<number>(0);

@@ -43,7 +43,7 @@ const MemoryGame = ({ onScoreUpdate }: MemoryGameProps) => {
     setImages((prevImages) => shuffleArray(prevImages))
   }
   return (
-    <div className="imageboard">
+    <div className="imageBoard">
       {images.map((image, index) => (
         <img
           key={`${image.id}-${index}`} 
